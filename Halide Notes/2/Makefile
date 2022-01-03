@@ -1,6 +1,6 @@
 CXX := g++
 TARGET := schedule
-HALIDEPATH := /mathworks/hub/3rdparty/R2022a/7412566/glnxa64/Halide
+HALIDEPATH := <Replace this with Halide Path>
 HEADER := -I $(HALIDEPATH)/include
 HEADERTOOLS := -I $(HALIDEPATH)/tools
 LIBPNG := -I/usr/include/libpng16
