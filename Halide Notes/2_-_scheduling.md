@@ -17,7 +17,6 @@ The brightening code is the same as before. We have wrapped the operation with t
     value = Halide::min(value, 255.0f);
     value = Halide::cast<uint8_t>(value);
     brighter(x, y, c) = value;
-    brighter.reorder(c,y,x);
     Halide::Buffer<uint8_t> output =
         brighter.realize({input.width(), input.height(), input.channels()});
 
@@ -42,9 +41,7 @@ for c:
 ```
 
 This default unmodified execution takes 428000 microseconds on my system. 
-For a grayscale image this order of execution looks like the following:
 
-![](img/columnmajor.png)
 
 
 ## 3 Reorder Loops
